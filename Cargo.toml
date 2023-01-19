@@ -1,0 +1,11 @@
+[package]
+name = "creepy"
+version = "0.1.0"
+edition = "2021"
+description = "copy file into clipboard"
+license="MIT"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+arboard = "3.2.0"
