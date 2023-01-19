@@ -1,20 +1,21 @@
 use std::{env::args, path::PathBuf, str::FromStr};
 
 fn main() {
-    let arg: Vec<String> = args().skip(1).take(1).collect();
+    let Some(arg) = args().skip(1).last() else {
+        eprintln!("no file path provided");
+        return;
+    };
 
-    if arg.is_empty() {
-        panic!("no file path provided");
-    }
-
-    let path = PathBuf::from_str(&arg[0]).unwrap();
+    let path = PathBuf::from_str(&arg).unwrap();
 
     if !path.exists() {
-        panic!("path doesn't exist");
+        eprintln!("path doesn't exist");
+        return;
     }
 
     if !path.is_file() {
-        panic!("path is not a regular file");
+        eprintln!("path is not a regular file");
+        return;
     }
 
     let file_content = std::fs::read_to_string(path).unwrap();
