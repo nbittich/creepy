@@ -3,9 +3,10 @@ name = "creepy"
 version = "0.2.1"
 edition = "2021"
 description = "copy file into clipboard"
-license="MIT"
+license = "MIT"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-arboard = "3.2.0"
+arboard = "3.2.1"
+flate2 = "1.0.27"
