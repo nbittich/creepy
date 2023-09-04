@@ -3,7 +3,6 @@ use std::{
     fs::OpenOptions,
     io::{BufReader, Read},
     path::PathBuf,
-    str::FromStr,
 };
 
 use flate2::read::GzDecoder;
